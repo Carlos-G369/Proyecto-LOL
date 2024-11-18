@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrar</title>
+</head>
+<body>
+    <h1>Registrar Nuevo Perfil</h1>
+    {% if mensaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+    <form method="POST">
+        Nombre: <input type="text" name="nombre"><br>
+        Apellido: <input type="text" name="apellido"><br>
+        Fecha de Nacimiento: <input type="date" name="fecha_nacimiento"><br>
+        Género: <input type="text" name="genero"><br>
+        Correo Electrónico: <input type="email" name="correo_electronico"><br>
+        Contraseña: <input type="password" name="contraseña"><br>
+        <button type="submit">Crear Perfil</button>
+    </form>
+    <a href="/">Volver al Inicio</a>
+</body>
+</html>

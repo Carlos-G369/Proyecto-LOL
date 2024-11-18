@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actualizar Grupo</title>
+</head>
+<body>
+    <h1>Actualizar Grupo</h1>
+    {% if mensaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+    <form method="POST" action="/update_group">
+        ID del Grupo: <input type="text" name="grupo_id" required><br>
+        Nuevo Nombre del Grupo (opcional): <input type="text" name="nuevo_nombre_grupo"><br>
+        Nueva Descripción (opcional): <input type="text" name="nueva_descripcion"><br>
+        Nueva Privacidad (opcional): <input type="text" name="nueva_privacidad"><br>
+        <button type="submit">Actualizar Grupo</button>
+    </form>
+    <a href="/profile">Volver al Perfil</a>
+</body>
+</html>

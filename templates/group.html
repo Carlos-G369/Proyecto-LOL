@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Grupo</title>
+</head>
+<body>
+    <h1>Crear Grupo</h1>
+    <form method="POST" action="/create_group">
+        Nombre del Grupo: <input type="text" name="nombre_grupo"><br>
+        Descripción: <textarea name="descripcion"></textarea><br>
+        Privacidad: <select name="privacidad">
+            <option value="Publica">Pública</option>
+            <option value="Privada">Privada</option>
+            <option value="Secreta">Secreta</option>
+        </select><br>
+        <button type="submit">Crear Grupo</button>
+    </form>
+    <a href="/profile">Volver al Perfil</a>
+</body>
+</html>

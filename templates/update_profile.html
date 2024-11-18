@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actualizar Perfil</title>
+</head>
+<body>
+    <h1>Actualizar Perfil</h1>
+    {% if mensaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+    <form method="POST" action="/update_profile">
+        Nuevo Nombre (opcional): <input type="text" name="nuevo_nombre"><br>
+        Nuevo Apellido (opcional): <input type="text" name="nuevo_apellido"><br>
+        Nueva Fecha de Nacimiento (opcional): <input type="date" name="nuevo_fecha_nacimiento"><br>
+        Nuevo Género (opcional): <input type="text" name="nuevo_genero"><br>
+        Nuevo Correo Electrónico (opcional): <input type="email" name="nuevo_correo_electronico"><br>
+        Nueva Contraseña (opcional): <input type="password" name="nuevo_contraseña"><br>
+        <button type="submit">Actualizar Perfil</button>
+    </form>
+    <a href="/profile">Volver al Perfil</a>
+</body>
+</html>

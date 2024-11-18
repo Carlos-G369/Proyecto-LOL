@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actualizar Publicación</title>
+</head>
+<body>
+    <h1>Actualizar Publicación</h1>
+    {% if mensaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+    <form method="POST" action="/update_post">
+        ID de la Publicación: <input type="text" name="post_id" required><br>
+        Nuevo Título (opcional): <input type="text" name="nuevo_titulo"><br>
+        Nuevo Contenido (opcional): <textarea name="nuevo_contenido"></textarea><br>
+        <button type="submit">Actualizar Publicación</button>
+    </form>
+    <a href="/profile">Volver al Perfil</a>
+</body>
+</html>
