@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Grupos{% endblock %}
+
+{% block content %}
+<h1>Lista de Grupos</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Categoría</th>
+            <th>Privacidad</th>
+            <th>Miembros</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for grupo in grupos %}
+        <tr>
+            <td>{{ grupo.titulo }}</td>
+            <td>{{ grupo.descripcion }}</td>
+            <td>{{ grupo.categoria }}</td>
+            <td>{{ grupo.privacidad }}</td>
+            <td>{{ grupo.numero_miembros }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

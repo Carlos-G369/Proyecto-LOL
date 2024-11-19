@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+</head>
+<body>
+    <h1>Editar Perfil</h1>
+    <form method="POST" action="" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="{{ perfil.nombre }}" required><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" value="{{ perfil.apellido }}" required><br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" name="fecha_nacimiento" value="{{ perfil.fecha_nacimiento }}"><br>
+
+        <label for="genero">Género:</label>
+        <select name="genero">
+            <option value="Masculino" {% if perfil.genero == 'Masculino' %}selected{% endif %}>Masculino</option>
+            <option value="Femenino" {% if perfil.genero == 'Femenino' %}selected{% endif %}>Femenino</option>
+            <option value="Otro" {% if perfil.genero == 'Otro' %}selected{% endif %}>Otro</option>
+        </select><br>
+
+        <label for="correo_electronico">Correo Electrónico:</label>
+        <input type="email" name="correo_electronico" value="{{ perfil.correo_electronico }}" required><br>
+
+        <label for="foto_perfil">Foto de Perfil:</label>
+        <input type="file" name="foto_perfil" accept="image/*"><br>
+
+        {% if perfil.foto_perfil %}
+            <p>Foto actual:</p>
+            <img src="{{ url_for('static', filename=perfil.foto_perfil) }}" alt="Foto actual" width="100">
+        {% endif %}
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <a href="/perfiles">Cancelar</a>
+</body>
+</html>

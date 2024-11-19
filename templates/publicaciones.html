@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones de {{ perfil.nombre }}</title>
+</head>
+<body>
+    <h1>Publicaciones de {{ perfil.nombre }} {{ perfil.apellido }}</h1>
+
+    {% if mensaje %}
+        <p>{{ mensaje }}</p>
+    {% else %}
+        <ul>
+            {% for publicacion in publicaciones %}
+                <li>
+                    <p><strong>Contenido:</strong> {{ publicacion.contenido }}</p>
+                    <p><small>Creado el: {{ publicacion.creado }}</small></p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="/perfiles">Volver a Perfiles</a>
+</body>
+</html>
